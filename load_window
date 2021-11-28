@@ -6,6 +6,12 @@ local window = library:CreateWindow(
     game.CoreGui
 )
 
+function getplrs()
+for i,v in pairs(game.Players:GetChildren()) do
+   return v.Name
+end
+end
+
 local main_tab = window:CreateTab("Main")
 do
     local fov_circle = Drawing.new("Circle")
@@ -30,11 +36,10 @@ do
         config.hitboxing = state
     end)
     hitbox_sector:CreateDropdown("hit part", {
-       for i,v in pairs(game.Players:GetChildren()) do
-       return v.Name
-       end
-    }, function(state)
-        config.target = state
+       getplrs()
+    }, 
+    function(state)
+    config.target = state
     end)
     
     fieldofview_sector:CreateSlider("range", 0, 360, 180, true, function(state)
