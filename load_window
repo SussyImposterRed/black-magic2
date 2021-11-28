@@ -30,9 +30,7 @@ do
         config.hitboxing = state
     end)
     hitbox_sector:CreateDropdown("hit part", {
-        for i,v in pairs(game.Players:GetChildren()) do
-           return v.Name
-        end
+       "yes"
     }, function(state)
         config.target = state
     end)
