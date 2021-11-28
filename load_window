@@ -12,6 +12,12 @@ for i,v in pairs(game.Players:GetChildren()) do
 end
 end
 
+local mouse = player:GetMouse()
+
+getgenv().get_mouse_pos = function()
+    return Vector2.new(mouse.X, mouse.Y)
+end
+
 local main_tab = window:CreateTab("Main")
 do
     local fov_circle = Drawing.new("Circle")
