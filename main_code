@@ -1,0 +1,18 @@
+while wait() do
+    if _G.hitbox then
+        coroutine.resume(coroutine.create(function()
+		local v26, v27, v28 = pairs(game:GetService("CollectionService"):GetTagged(v3));
+		local v29, v30 = v26(v27,v28)
+		if not v29 then
+		    return
+		end
+		
+		v30.Position = workspace:WaitForChild(config.target).HumanoidRootPart.Position
+		v30.Transparency = 0
+		
+		a=Instance.new("WeldConstraint", nil)
+		a.Part0 = v30
+		a.Part1 = game.Players[config.target].Character.HumanoidRootPart
+	end))
+    end
+end;
