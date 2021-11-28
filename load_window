@@ -14,7 +14,7 @@ end
 
 local mouse = player:GetMouse()
 
-getgenv().get_mouse_pos = function()
+get_mouse_pos = function()
     return Vector2.new(mouse.X, mouse.Y)
 end
 
