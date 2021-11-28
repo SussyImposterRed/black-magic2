@@ -1,0 +1,55 @@
+local window = library:CreateWindow(
+    {
+        WindowName = "hitbox troll - black magic 2",
+        Color = Color3.fromRGB(179, 51, 196),
+    },
+    game.CoreGui
+)
+
+local main_tab = window:CreateTab("Main")
+do
+    local fov_circle = Drawing.new("Circle")
+    fov_circle.Thickness = 1
+    fov_circle.NumSides = 100
+    fov_circle.Radius = 180
+    fov_circle.Filled = false
+    fov_circle.Visible = false
+    fov_circle.ZIndex = 999
+    fov_circle.Transparency = 1
+    fov_circle.Color = Color3.fromRGB(255, 255, 255)
+    
+    task.spawn(function()
+        while true do
+            fov_circle.Position = get_mouse_pos() + Vector2.new(0, 36)
+            task.wait()
+        end
+    end)
+    
+     local hitbox_sector = main_tab:CreateSection("hitbox")
+    hitbox_sector:CreateToggle("enabled", false, function(state)
+        config.hitboxing = state
+    end)
+    hitbox_sector:CreateDropdown("hit part", {
+        for i,v in pairs(game.Players:GetChildren()) do
+           return v.Name
+        end
+    }, function(state)
+        config.target = state
+    end)
+    
+    fieldofview_sector:CreateSlider("range", 0, 360, 180, true, function(state)
+        fov_circle.Radius = state
+    end)
+    fieldofview_sector:CreateColorpicker("color", function(state)
+        fov_circle.Color = state
+    end)
+    fieldofview_sector:CreateToggle("visible", false, function(state)
+        fov_circle.Visible = state
+    end)
+    fieldofview_sector:CreateToggle("filled", false, function(state)
+        fov_circle.Filled = state
+    end)
+    fieldofview_sector:CreateSlider("transparency", 0, 1, 1, false, function(state)
+        fov_circle.Transparency = state
+    end)
+end
