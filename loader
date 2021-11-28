@@ -1,7 +1,6 @@
 local url = "https://raw.githubusercontent.com/SussyImposterRed/black-magic2/main"
 
 local function import(file)
-    out("Importing File \"%s\"", file)
     -- return task.spawn(function()
     local x, a = pcall(function()
         return loadstring(game:HttpGet(url .. file))()
