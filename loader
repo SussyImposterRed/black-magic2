@@ -18,7 +18,7 @@ if not import then
     return
 end
 
-import('main_code')
-import('config')
-import('library')
-import('load_window')
+import('/main_code')
+import('/config')
+import('/library')
+import('/load_window')
