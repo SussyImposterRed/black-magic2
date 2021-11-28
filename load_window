@@ -12,6 +12,7 @@ for i,v in pairs(game.Players:GetChildren()) do
 end
 end
 
+local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
 
 get_mouse_pos = function()
