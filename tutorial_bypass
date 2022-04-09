@@ -1,0 +1,2 @@
+---// bypass like literally just one line of code bruh \\--
+game:GetService("TeleportService"):Teleport(game:GetService("Workspace").Places.Game.Value)
