@@ -1,4 +1,4 @@
-getgenv().config = {
+_G.config = {
   hitboxing = false,
   target = ""
 }
