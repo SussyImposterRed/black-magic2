@@ -7,7 +7,7 @@ while wait() do
 		    return
 		end
 		
-		v30.Position = workspace:WaitForChild(config.target).HumanoidRootPart.Position
+		v30.Position = workspace:WaitForChild(_G.config.target).HumanoidRootPart.Position
 		v30.Transparency = 0
 		
 		a=Instance.new("WeldConstraint", nil)
