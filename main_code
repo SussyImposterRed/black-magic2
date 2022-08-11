@@ -9,10 +9,10 @@ while wait() do
 		
 		v30.Position = workspace:WaitForChild(_G.config.target).HumanoidRootPart.Position
 		v30.Transparency = 0
-		
-		a=Instance.new("WeldConstraint", nil)
+		v30:BreakJoints()
+		a=Instance.new("WeldConstraint", v30)
 		a.Part0 = v30
-		a.Part1 = game.Players[config.target].Character.HumanoidRootPart
+		a.Part1 = game.Players[_G.config.target].Character.HumanoidRootPart
 	end))
     end
 end;
